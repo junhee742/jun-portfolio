@@ -1,0 +1,40 @@
+---
+import { supportingWork } from '../data/portfolio';
+import { withBase } from '../lib/paths';
+---
+
+<section class="supporting-section container" id="more-work" aria-labelledby="supporting-title">
+  <div class="section-heading section-heading--split">
+    <div>
+      <p class="section-heading__eyebrow">More Work</p>
+      <h2 id="supporting-title">대표 사례 밖의 경험</h2>
+    </div>
+    <p>
+      대표 프로젝트와 겹치지 않으면서 운영, 기술 선택, 자동화와 사내 확산 역량을 보여주는
+      경험입니다.
+    </p>
+  </div>
+
+  <div class="supporting-list">
+    {
+      supportingWork.map((item) => (
+        <article class:list={['supporting-row', { 'supporting-row--linked': item.slug }]}>
+          <p class="supporting-row__period">{item.period}</p>
+          <div>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+          </div>
+          <div class="supporting-row__evidence">
+            <strong>{item.evidence}</strong>
+            {item.slug && (
+              <a href={withBase(`work/${item.slug}/`)} aria-label={`${item.title} 사례 자세히 보기`}>
+                사례 자세히 보기
+                <i class="ph ph-arrow-up-right" aria-hidden="true" />
+              </a>
+            )}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

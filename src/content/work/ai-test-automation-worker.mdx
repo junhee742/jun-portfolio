@@ -1,13 +1,17 @@
 ---
-order: 3
+order: 4
 title: "검증을 통과한 변경만 발행하는 AI 테스트 자동화"
 homeTitle: "AI 테스트 자동화"
 summary: "AI가 만든 테스트를 별도 검증하고 기준을 통과한 경우에만 브랜치로 발행하도록 자동화했습니다."
 description: "저장소별 규칙과 AI 보완, 격리 검증, 발행 경계를 연결해 실패한 변경이 외부로 나가지 않도록 만든 사례입니다."
+period: "2026.03 — 06"
+product: "AI 백엔드 개발 도구"
+capability: "Verified Automation"
+featured: true
 evidence:
   - "검증 통과 후 발행"
   - "80.7% / 755 tests"
-role: "worker 흐름 구현 · 생성 경계 설계 · 검증 실행"
+role: "자동화 흐름 구현 · 생성 경계 설계 · 검증 실행"
 scope: "한정된 단일 서비스 및 보존된 실행"
 reviewedAt: 2026-07-22
 publicSafe: true
@@ -52,11 +56,13 @@ publicSafe: true
 - 보존된 실행에서 518개 후보 중 한 대상을 선택했습니다.
 - 선택된 대상은 AI refinement 1/1과 verification 1/1을 통과하고 branch 발행이 기록됐습니다.
 - 한정된 단일 서비스 검증에서 CI 성공, 전체 coverage 80.7%, 755개 테스트를 확인했습니다.
+- 전체 14개 서비스 중 마지막 확인 기준 4개가 목표 범위에 도달했습니다.
 - disposable clone에서 pytest가 exit code 0으로 끝났고 원본 저장소는 변경하지 않았습니다.
 
 ## Boundaries
 
 - 80.7% coverage와 755개 테스트는 한 서비스에만 해당합니다.
+- 4/14는 마지막 확인 시점의 진행 상태이며 전체 서비스 완료를 의미하지 않습니다.
 - 전체 서비스의 before/after coverage 개선을 주장하지 않습니다.
 - production 신뢰성이나 고객·비즈니스 효과를 주장하지 않습니다.
 - auto-merge 성공을 주장하지 않습니다.

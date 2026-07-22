@@ -1,0 +1,64 @@
+---
+import { productExperience } from '../data/portfolio';
+---
+
+<section class="experience-section container" id="experience" aria-labelledby="experience-title">
+  <div class="section-heading section-heading--split">
+    <div>
+      <p class="section-heading__eyebrow">Experience</p>
+      <h2 id="experience-title">경력과 제품 경험</h2>
+    </div>
+    <p>
+      한 회사 안에서 금융권 구축·클라우드 운영·AI 제품 개발을 오가며 제품이 고객 환경에 적용되고
+      운영되는 전 과정을 경험했습니다.
+    </p>
+  </div>
+
+  <div class="career-summary">
+    <div class="career-summary__primary">
+      <p class="career-summary__period">2022.11 — 현재</p>
+      <h3>(주)스펙트라 · 제품개발부</h3>
+      <p>
+        4년 차 B2B 백엔드 개발자로 요구사항 분석, 설계·개발, 테스트, 고객 검증과 배포·운영
+        이행까지 담당해 왔습니다.
+      </p>
+    </div>
+    <dl class="career-summary__facts">
+      <div>
+        <dt>Current</dt>
+        <dd>금융권 고객사 상담 시스템 구축</dd>
+      </div>
+      <div>
+        <dt>Core</dt>
+        <dd>Enterprise Backend · AI Agent/RAG</dd>
+      </div>
+      <div>
+        <dt>Scope</dt>
+        <dd>요구사항 → 개발 → 검증 → 운영 이행</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="experience-list" aria-label="제품별 경력">
+    {
+      productExperience.map((item, index) => (
+        <details class="experience-item" open={index === 0}>
+          <summary>
+            <span class="experience-item__period">{item.period}</span>
+            <span class="experience-item__title">
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+            </span>
+            <i class="ph ph-plus" aria-hidden="true" />
+          </summary>
+          <div class="experience-item__body">
+            <p>{item.summary}</p>
+            <ul>
+              {item.contributions.map((contribution) => <li>{contribution}</li>)}
+            </ul>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>

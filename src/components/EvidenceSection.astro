@@ -1,0 +1,60 @@
+---
+import { evidenceGroups, skillGroups, workingPrinciples } from '../data/portfolio';
+---
+
+<section class="evidence-section container" id="evidence" aria-labelledby="evidence-title">
+  <div class="section-heading section-heading--split">
+    <div>
+      <p class="section-heading__eyebrow">Evidence & Practice</p>
+      <h2 id="evidence-title">결과를 확인하는 방식</h2>
+    </div>
+    <p>
+      공개 페이지에는 고객·내부 시스템 식별자를 제외하고, 각 주장을 확인할 수 있는 자료의 종류와
+      검증 범위를 설명합니다.
+    </p>
+  </div>
+
+  <div class="evidence-grid">
+    {
+      evidenceGroups.map((group) => (
+        <article class="evidence-card">
+          <h3>{group.title}</h3>
+          <p>{group.description}</p>
+          <ul>
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+
+  <div class="practice-grid">
+    <div class="practice-panel">
+      <p class="practice-panel__eyebrow">Working Principles</p>
+      <h3>제가 일할 때 지키는 기준</h3>
+      <ol>
+        {workingPrinciples.map((principle) => <li>{principle}</li>)}
+      </ol>
+    </div>
+
+    <details class="skills-panel">
+      <summary>
+        <span>
+          <span class="practice-panel__eyebrow">Technical Range</span>
+          <strong>기술 스택 전체 보기</strong>
+        </span>
+        <i class="ph ph-plus" aria-hidden="true" />
+      </summary>
+      <dl>
+        {
+          skillGroups.map((group) => (
+            <div>
+              <dt>{group.label}</dt>
+              <dd>{group.values}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </details>
+  </div>
+</section>

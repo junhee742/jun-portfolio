@@ -8,13 +8,16 @@ interface Props {
   title: string;
   description: string;
   order: number;
+  period: string;
+  product: string;
+  capability: string;
   role: string;
   scope: string;
   evidence: string[];
   canonicalPath: string;
 }
 
-const { title, description, order, role, scope, evidence, canonicalPath } = Astro.props;
+const { title, description, order, period, product, capability, role, scope, evidence, canonicalPath } = Astro.props;
 const number = String(order).padStart(2, '0');
 ---
 
@@ -28,6 +31,7 @@ const number = String(order).padStart(2, '0');
           프로젝트 목록
         </a>
         <p class="case-study__number">Case Study {number}</p>
+        <p class="case-study__context">{period} · {product} · {capability}</p>
         <h1>{title}</h1>
         <p class="case-study__description">{description}</p>
 

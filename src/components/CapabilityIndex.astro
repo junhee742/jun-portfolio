@@ -1,0 +1,29 @@
+---
+import { capabilityLinks } from '../data/portfolio';
+---
+
+<section class="capability-section container" aria-labelledby="capability-title">
+  <div class="section-heading section-heading--split">
+    <div>
+      <p class="section-heading__eyebrow">What I Solve</p>
+      <h2 id="capability-title">어떤 문제를 맡아 왔는지</h2>
+    </div>
+    <p>
+      하나의 기술보다 고객 환경, AI 품질과 검증 경계를 함께 다뤄 온 경험으로 저를 설명할 수
+      있습니다.
+    </p>
+  </div>
+
+  <div class="capability-list">
+    {
+      capabilityLinks.map((item) => (
+        <a class="capability-row" href={item.href}>
+          <span class="capability-row__eyebrow">{item.eyebrow}</span>
+          <strong>{item.title}</strong>
+          <span>{item.description}</span>
+          <i class="ph ph-arrow-down-right" aria-hidden="true" />
+        </a>
+      ))
+    }
+  </div>
+</section>
