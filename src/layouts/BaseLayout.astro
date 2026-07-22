@@ -2,6 +2,7 @@
 import '@fontsource-variable/noto-sans-kr';
 import '@phosphor-icons/web/regular/style.css';
 import '../styles/global.css';
+import { withBase } from '../lib/paths';
 
 interface Props {
   title?: string;
@@ -13,12 +14,12 @@ interface Props {
 const {
   title = '이준희 — 고객 환경과 AI 품질을 연결하는 백엔드 엔지니어',
   description = '복잡한 고객 환경에서 동작하는 백엔드 기능과 다시 확인할 수 있는 AI 품질 기준을 설계합니다.',
-  canonicalPath = Astro.url.pathname,
+  canonicalPath = '',
   type = 'website',
 } = Astro.props;
 
-const canonical = new URL(canonicalPath, Astro.site ?? Astro.url);
-const socialImage = new URL('/og/portfolio.png', Astro.site ?? Astro.url);
+const canonical = new URL(withBase(canonicalPath), Astro.site ?? Astro.url);
+const socialImage = new URL(withBase('og/portfolio.png'), Astro.site ?? Astro.url);
 ---
 
 <!doctype html>

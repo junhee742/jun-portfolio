@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { withBase } from '../lib/paths';
 
 interface Props {
   title: string;
@@ -22,7 +23,7 @@ const number = String(order).padStart(2, '0');
   <main id="main-content">
     <article class="case-study">
       <div class="container case-study__header">
-        <a class="case-study__back" href="/#selected-work">
+        <a class="case-study__back" href={`${withBase()}#selected-work`}>
           <i class="ph ph-arrow-left" aria-hidden="true"></i>
           프로젝트 목록
         </a>
@@ -51,7 +52,7 @@ const number = String(order).padStart(2, '0');
       </div>
 
       <div class="container case-study__next">
-        <a href="/#selected-work">
+        <a href={`${withBase()}#selected-work`}>
           다른 프로젝트 보기
           <i class="ph ph-arrow-right" aria-hidden="true"></i>
         </a>
