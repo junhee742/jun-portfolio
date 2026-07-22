@@ -14,6 +14,10 @@
 - Phosphor Icons
 - Vercel 배포
 
+## 배포
+
+`main` 브랜치에 push하면 Vercel 프로덕션 배포가 자동으로 실행됩니다. GitHub Pages 배포는 예비 공개 경로로 유지합니다.
+
 ## 로컬 실행
 
 Node.js 22.12 이상이 필요합니다.
