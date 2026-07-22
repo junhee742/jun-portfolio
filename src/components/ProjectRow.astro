@@ -1,0 +1,25 @@
+---
+interface Props {
+  id: string;
+  order: number;
+  title: string;
+  summary: string;
+  evidence: string[];
+}
+
+const { id, order, title, summary, evidence } = Astro.props;
+const number = String(order).padStart(2, '0');
+---
+
+<a class="project-row" href={`/work/${id}/`} aria-label={`${title} 프로젝트 상세 보기`}>
+  <span class="project-row__number" aria-hidden="true">{number}</span>
+  <span class="project-row__body">
+    <span class="project-row__title">{title}</span>
+    <span class="project-row__summary">{summary}</span>
+  </span>
+  <span class="project-row__evidence">
+    <span class="project-row__eyebrow">Evidence</span>
+    <span class="project-row__evidence-copy">{evidence.join(' · ')}</span>
+  </span>
+  <i class="ph ph-arrow-up-right project-row__icon" aria-hidden="true"></i>
+</a>

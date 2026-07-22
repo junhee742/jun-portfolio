@@ -1,0 +1,18 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<header class:list={['site-header', { 'site-header--compact': compact }]}> 
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="/" aria-label="이준희 포트폴리오 홈">이준희</a>
+    <nav class="site-header__nav" aria-label="주요 메뉴">
+      <a href="/#selected-work">프로젝트</a>
+      <a href="/#career">소개</a>
+      <a href="mailto:junhee742@naver.com">연락</a>
+    </nav>
+  </div>
+</header>

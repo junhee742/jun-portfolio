@@ -1,0 +1,62 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  order: number;
+  role: string;
+  scope: string;
+  evidence: string[];
+  canonicalPath: string;
+}
+
+const { title, description, order, role, scope, evidence, canonicalPath } = Astro.props;
+const number = String(order).padStart(2, '0');
+---
+
+<BaseLayout title={`${title} — 이준희`} description={description} canonicalPath={canonicalPath} type="article">
+  <Header compact />
+  <main id="main-content">
+    <article class="case-study">
+      <div class="container case-study__header">
+        <a class="case-study__back" href="/#selected-work">
+          <i class="ph ph-arrow-left" aria-hidden="true"></i>
+          프로젝트 목록
+        </a>
+        <p class="case-study__number">Case Study {number}</p>
+        <h1>{title}</h1>
+        <p class="case-study__description">{description}</p>
+
+        <dl class="case-study__facts">
+          <div>
+            <dt>Role</dt>
+            <dd>{role}</dd>
+          </div>
+          <div>
+            <dt>Verification Scope</dt>
+            <dd>{scope}</dd>
+          </div>
+          <div>
+            <dt>Evidence</dt>
+            <dd>{evidence.join(' · ')}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="container case-study__content prose">
+        <slot />
+      </div>
+
+      <div class="container case-study__next">
+        <a href="/#selected-work">
+          다른 프로젝트 보기
+          <i class="ph ph-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
