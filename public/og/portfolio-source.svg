@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1487" height="1058" viewBox="0 0 1487 1058" role="img" aria-labelledby="title desc">
+  <title id="title">이준희 백엔드 개발자 포트폴리오</title>
+  <desc id="desc">고객 환경과 AI 품질을 함께 보는 백엔드 개발자와 대표 사례 세 가지</desc>
+  <rect width="1487" height="1058" fill="#fbfaf6"/>
+
+  <g font-family="Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif">
+    <text x="80" y="58" fill="#181a20" font-size="24" font-weight="700">이준희</text>
+    <text x="1407" y="58" fill="#5d6068" font-size="18" text-anchor="end">백엔드 · AI 품질</text>
+    <line x1="0" y1="82" x2="1487" y2="82" stroke="#d8d9df"/>
+
+    <text x="100" y="150" fill="#2955d9" font-size="17" font-weight="700" letter-spacing="1.2">기업 고객용 백엔드 · AI 품질 검증</text>
+    <text x="100" y="234" fill="#181a20" font-size="58" font-weight="800" letter-spacing="-2">고객 환경과 AI 품질을</text>
+    <text x="100" y="308" fill="#181a20" font-size="58" font-weight="800" letter-spacing="-2">함께 보는 백엔드 개발자</text>
+    <text x="100" y="360" fill="#5d6068" font-size="23">고객 환경에서 막힐 조건을 먼저 확인하고, 반복된 실패를 다음 변경의 테스트로 남깁니다.</text>
+
+    <line x1="100" y1="416" x2="1387" y2="416" stroke="#181a20" stroke-width="2"/>
+    <text x="100" y="456" fill="#181a20" font-size="22" font-weight="700">대표 사례</text>
+
+    <g transform="translate(100 494)">
+      <text x="0" y="30" fill="#2955d9" font-size="19" font-weight="700">01</text>
+      <text x="104" y="30" fill="#181a20" font-size="24" font-weight="700">반복된 AI 답변 오류 재검증</text>
+      <text x="104" y="66" fill="#5d6068" font-size="18">실패한 질문, 표현을 바꾼 질문과 기존 정상 답변을 함께 다시 실행</text>
+      <text x="1287" y="30" fill="#181a20" font-size="19" font-weight="700" text-anchor="end">답변 생성 · 질문 분류를 따로 확인</text>
+      <line x1="0" y1="94" x2="1287" y2="94" stroke="#d8d9df"/>
+    </g>
+
+    <g transform="translate(100 610)">
+      <text x="0" y="30" fill="#2955d9" font-size="19" font-weight="700">02</text>
+      <text x="104" y="30" fill="#181a20" font-size="24" font-weight="700">AI 테스트 자동화</text>
+      <text x="104" y="66" fill="#5d6068" font-size="18">AI가 만든 테스트를 별도 환경에서 실행하고, 통과한 변경만 검토용 브랜치로 발행</text>
+      <text x="1287" y="30" fill="#181a20" font-size="19" font-weight="700" text-anchor="end">518개 후보 → 대상 1개</text>
+      <text x="1287" y="62" fill="#5d6068" font-size="17" text-anchor="end">코드 실행 80.7% · 테스트 755개</text>
+      <line x1="0" y1="94" x2="1287" y2="94" stroke="#d8d9df"/>
+    </g>
+
+    <g transform="translate(100 726)">
+      <text x="0" y="30" fill="#2955d9" font-size="19" font-weight="700">03</text>
+      <text x="104" y="30" fill="#181a20" font-size="24" font-weight="700">공유 DB의 예약 작업 분리</text>
+      <text x="104" y="66" fill="#5d6068" font-size="18">두 제품의 예약 작업 기록이 섞이지 않도록 테이블을 나누고 작업 인계까지 확인</text>
+      <text x="1287" y="30" fill="#181a20" font-size="19" font-weight="700" text-anchor="end">예정 실행 21/21 · 중복 0건</text>
+      <line x1="0" y1="94" x2="1287" y2="94" stroke="#d8d9df"/>
+    </g>
+
+    <rect x="100" y="872" width="1287" height="116" fill="#f2f0ea"/>
+    <text x="136" y="918" fill="#2955d9" font-size="16" font-weight="700" letter-spacing="1">경력 흐름</text>
+    <text x="282" y="922" fill="#181a20" font-size="22" font-weight="700">고객사 구축·운영</text>
+    <path d="M482 915h70" stroke="#2955d9" stroke-width="2"/>
+    <path d="m544 908 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+    <text x="594" y="922" fill="#181a20" font-size="22" font-weight="700">AI 제품 백엔드</text>
+    <path d="M782 915h70" stroke="#2955d9" stroke-width="2"/>
+    <path d="m844 908 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+    <text x="894" y="922" fill="#181a20" font-size="22" font-weight="700">AI 품질·테스트 자동화</text>
+    <text x="136" y="962" fill="#5d6068" font-size="17">문제 정의 → 구현 → 검증 → 배포</text>
+  </g>
+</svg>

@@ -6,43 +6,43 @@ import { productExperience } from '../data/portfolio';
   <div class="section-heading section-heading--split">
     <div>
       <p class="section-heading__eyebrow">Experience</p>
-      <h2 id="experience-title">경력과 제품 경험</h2>
+      <h2 id="experience-title">한눈에 보는 경력</h2>
     </div>
     <p>
-      한 회사 안에서 금융권 구축·클라우드 운영·AI 제품 개발을 오가며 제품이 고객 환경에 적용되고
-      운영되는 전 과정을 경험했습니다.
+      한 회사에서 고객사 구축과 클라우드 운영을 맡은 뒤, AI 제품 백엔드와 품질 자동화로
+      역할을 넓혔습니다. 여러 업무가 겹친 기간은 맡은 문제를 기준으로 나눠 적었습니다.
     </p>
   </div>
 
   <div class="career-summary">
     <div class="career-summary__primary">
       <p class="career-summary__period">2022.11 — 현재</p>
-      <h3>(주)스펙트라 · 제품개발부</h3>
+      <h3>기업 고객용 상담 제품 백엔드</h3>
       <p>
-        4년 차 B2B 백엔드 개발자로 요구사항 분석, 설계·개발, 테스트, 고객 검증과 배포·운영
-        이행까지 담당해 왔습니다.
+        요구사항 분석부터 개발, 고객 검증과 배포까지 맡으며 고객 환경에서 실제로 동작하는
+        조건을 함께 확인해 왔습니다.
       </p>
     </div>
     <dl class="career-summary__facts">
       <div>
-        <dt>Current</dt>
-        <dd>금융권 고객사 상담 시스템 구축</dd>
+        <dt>현재</dt>
+        <dd>두 상담 제품이 함께 동작할 조건과 AI 기능 검증</dd>
       </div>
       <div>
-        <dt>Core</dt>
-        <dd>Enterprise Backend · AI Agent/RAG</dd>
+        <dt>주력</dt>
+        <dd>기업 고객용 백엔드 · AI 품질 시스템</dd>
       </div>
       <div>
-        <dt>Scope</dt>
-        <dd>요구사항 → 개발 → 검증 → 운영 이행</dd>
+        <dt>업무 범위</dt>
+        <dd>문제 정의 → 구현 → 검증 → 배포</dd>
       </div>
     </dl>
   </div>
 
   <div class="experience-list" aria-label="제품별 경력">
     {
-      productExperience.map((item, index) => (
-        <details class="experience-item" open={index === 0}>
+      productExperience.map((item) => (
+        <details class="experience-item" open>
           <summary>
             <span class="experience-item__period">{item.period}</span>
             <span class="experience-item__title">

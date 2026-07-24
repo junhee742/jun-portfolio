@@ -145,7 +145,7 @@ a {
 }
 
 .hero h1 {
-  max-width: 720px;
+  max-width: 980px;
   margin: 0;
   font-size: clamp(46px, 4vw, 56px);
   font-weight: 790;
@@ -155,7 +155,7 @@ a {
 }
 
 .hero__summary {
-  max-width: 640px;
+  max-width: 820px;
   margin: 22px 0 24px;
   color: #363636;
   font-size: 20px;
@@ -1020,6 +1020,26 @@ a {
 
 .prose strong {
   color: var(--ink);
+}
+
+.evidence-figure {
+  margin: 42px 0 54px;
+}
+
+.evidence-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.evidence-figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: -0.015em;
+  line-height: 1.65;
 }
 
 .case-study__next {

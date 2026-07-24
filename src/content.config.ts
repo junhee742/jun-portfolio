@@ -18,7 +18,7 @@ const work = defineCollection({
     role: z.string(),
     scope: z.string(),
     reviewedAt: z.coerce.date(),
-    publicSafe: z.literal(true),
+    publicSafe: z.boolean(),
   }),
 });
 

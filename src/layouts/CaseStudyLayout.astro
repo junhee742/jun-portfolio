@@ -28,24 +28,24 @@ const number = String(order).padStart(2, '0');
       <div class="container case-study__header">
         <a class="case-study__back" href={`${withBase()}#selected-work`}>
           <i class="ph ph-arrow-left" aria-hidden="true"></i>
-          프로젝트 목록
+          대표 사례 목록
         </a>
-        <p class="case-study__number">Case Study {number}</p>
+        <p class="case-study__number">대표 사례 {number}</p>
         <p class="case-study__context">{period} · {product} · {capability}</p>
         <h1>{title}</h1>
         <p class="case-study__description">{description}</p>
 
         <dl class="case-study__facts">
           <div>
-            <dt>Role</dt>
+            <dt>제가 맡은 일</dt>
             <dd>{role}</dd>
           </div>
           <div>
-            <dt>Verification Scope</dt>
+            <dt>확인한 범위</dt>
             <dd>{scope}</dd>
           </div>
           <div>
-            <dt>Evidence</dt>
+            <dt>핵심 근거</dt>
             <dd>{evidence.join(' · ')}</dd>
           </div>
         </dl>
@@ -57,7 +57,7 @@ const number = String(order).padStart(2, '0');
 
       <div class="container case-study__next">
         <a href={`${withBase()}#selected-work`}>
-          다른 프로젝트 보기
+          다른 사례 보기
           <i class="ph ph-arrow-right" aria-hidden="true"></i>
         </a>
       </div>

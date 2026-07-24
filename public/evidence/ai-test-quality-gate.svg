@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">AI 테스트 자동화의 검증과 발행 흐름</title>
+  <desc id="desc">대상 선택, 테스트 초안, 격리 검증, 최종 검증, 브랜치 발행의 다섯 단계와 실제 확인 범위</desc>
+  <rect width="1200" height="560" fill="#fbfaf6"/>
+  <text x="64" y="76" fill="#181a20" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="34" font-weight="700">AI가 만든 테스트도 검증을 통과한 뒤에만 내보냅니다</text>
+  <text x="64" y="114" fill="#5d6068" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="19">생성 성공과 실행 성공을 분리하고, 실패한 변경은 브랜치를 만들기 전에 멈춥니다.</text>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <g transform="translate(64 176)">
+      <rect width="184" height="164" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">01</text>
+      <text x="24" y="80" fill="#181a20" font-size="21" font-weight="700">대상 선택</text>
+      <text x="24" y="116" fill="#5d6068" font-size="16">저장소 규칙에 맞는</text>
+      <text x="24" y="142" fill="#5d6068" font-size="16">테스트 후보 선택</text>
+    </g>
+    <path d="M262 258h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m293 251 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(314 176)">
+      <rect width="184" height="164" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">02</text>
+      <text x="24" y="80" fill="#181a20" font-size="21" font-weight="700">테스트 초안</text>
+      <text x="24" y="116" fill="#5d6068" font-size="16">허용한 파일 안에서</text>
+      <text x="24" y="142" fill="#5d6068" font-size="16">AI가 테스트 보완</text>
+    </g>
+    <path d="M512 258h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m543 251 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(564 176)">
+      <rect width="184" height="164" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">03</text>
+      <text x="24" y="80" fill="#181a20" font-size="21" font-weight="700">격리 검증</text>
+      <text x="24" y="116" fill="#5d6068" font-size="16">원본과 분리한</text>
+      <text x="24" y="142" fill="#5d6068" font-size="16">임시 저장소에서 실행</text>
+    </g>
+    <path d="M762 258h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m793 251 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(814 176)">
+      <rect width="184" height="164" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">04</text>
+      <text x="24" y="80" fill="#181a20" font-size="21" font-weight="700">최종 검증</text>
+      <text x="24" y="116" fill="#5d6068" font-size="16">테스트·커버리지와</text>
+      <text x="24" y="142" fill="#5d6068" font-size="16">변경 파일 범위 확인</text>
+    </g>
+    <path d="M1012 258h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m1043 251 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(1064 176)">
+      <rect width="72" height="164" rx="4" fill="#2955d9"/>
+      <text x="36" y="48" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">05</text>
+      <text x="36" y="88" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">검토용</text>
+      <text x="36" y="116" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">발행</text>
+    </g>
+  </g>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <rect x="64" y="396" width="336" height="104" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="88" y="430" fill="#5d6068" font-size="15">보존된 한 차례 실행</text>
+    <text x="88" y="469" fill="#181a20" font-size="25" font-weight="700">518개 후보 → 대상 1개</text>
+
+    <rect x="432" y="396" width="336" height="104" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="456" y="430" fill="#5d6068" font-size="15">선택된 대상</text>
+    <text x="456" y="469" fill="#181a20" font-size="25" font-weight="700">AI 보완 1/1 · 검증 1/1</text>
+
+    <rect x="800" y="396" width="336" height="104" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="824" y="430" fill="#5d6068" font-size="15">한 서비스의 전체 결과</text>
+    <text x="824" y="469" fill="#181a20" font-size="25" font-weight="700">코드 실행 80.7% · 테스트 755개</text>
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">답변 오류를 회귀검증으로 바꾼 흐름</title>
+  <desc id="desc">답변 오류 수집, 검증 데이터 구성, 수정, 같은 질문 재실행, 내부 검증의 다섯 단계</desc>
+  <rect width="1200" height="520" fill="#fbfaf6"/>
+  <text x="64" y="78" fill="#181a20" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="34" font-weight="700">답변 오류를 다음 변경의 검증 기준으로 남겼습니다</text>
+  <text x="64" y="116" fill="#5d6068" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="19">실패한 질문만 고치지 않고, 기존에 정상 동작하던 답변까지 같은 조건으로 다시 확인합니다.</text>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <g transform="translate(64 184)">
+      <rect width="184" height="176" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">01</text>
+      <text x="24" y="82" fill="#181a20" font-size="22" font-weight="700">오류 수집</text>
+      <text x="24" y="118" fill="#5d6068" font-size="16">반복된 질문과</text>
+      <text x="24" y="145" fill="#5d6068" font-size="16">기대 답변 정리</text>
+    </g>
+    <path d="M262 272h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m293 265 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(314 184)">
+      <rect width="184" height="176" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">02</text>
+      <text x="24" y="82" fill="#181a20" font-size="22" font-weight="700">검증 데이터</text>
+      <text x="24" y="118" fill="#5d6068" font-size="16">실패·표현 변형·</text>
+      <text x="24" y="145" fill="#5d6068" font-size="16">기존 정상 답변 분리</text>
+    </g>
+    <path d="M512 272h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m543 265 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(564 184)">
+      <rect width="184" height="176" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">03</text>
+      <text x="24" y="82" fill="#181a20" font-size="22" font-weight="700">원인별 수정</text>
+      <text x="24" y="118" fill="#5d6068" font-size="16">답변 생성과</text>
+      <text x="24" y="145" fill="#5d6068" font-size="16">질문 분류를 분리</text>
+    </g>
+    <path d="M762 272h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m793 265 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(814 184)">
+      <rect width="184" height="176" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="42" fill="#2955d9" font-size="16" font-weight="700">04</text>
+      <text x="24" y="82" fill="#181a20" font-size="22" font-weight="700">같은 질문 실행</text>
+      <text x="24" y="118" fill="#5d6068" font-size="16">수정 전과 같은</text>
+      <text x="24" y="145" fill="#5d6068" font-size="16">입력으로 재확인</text>
+    </g>
+    <path d="M1012 272h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m1043 265 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(1064 184)">
+      <rect width="72" height="176" rx="4" fill="#2955d9"/>
+      <text x="36" y="48" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">05</text>
+      <text x="36" y="88" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">내부</text>
+      <text x="36" y="116" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">검증</text>
+    </g>
+  </g>
+
+  <line x1="64" y1="416" x2="1136" y2="416" stroke="#d8d9df"/>
+  <text x="64" y="458" fill="#181a20" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="18" font-weight="700">검증 범위</text>
+  <text x="172" y="458" fill="#5d6068" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="17">답변 생성과 질문 분류를 각각 실행 · 고객 질문과 내부 경로는 익명화</text>
+</svg>
