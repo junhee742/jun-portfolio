@@ -12,8 +12,8 @@ interface Props {
 }
 
 const {
-  title = '이준희 — 고객 환경과 AI 품질을 함께 보는 백엔드 개발자',
-  description = '고객 환경의 제약을 먼저 확인하고, 반복된 실패를 다시 실행할 수 있는 테스트로 바꾸는 기업 고객용 백엔드 개발자입니다.',
+  title = '이준희 — 작은 기능부터 직접 만들며 역할을 넓혀 온 백엔드 개발자',
+  description = '반복 업무를 도구로 만들던 경험에서 시작해 사내 AI 챗봇, AI 제품 백엔드와 품질 자동화까지 역할을 넓혀 온 개발자입니다.',
   canonicalPath = '',
   type = 'website',
 } = Astro.props;
@@ -30,6 +30,7 @@ const socialImage = new URL(withBase('og/portfolio.png'), Astro.site ?? Astro.ur
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#faf9f6" />
+    <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content={type} />
     <meta property="og:locale" content="ko_KR" />

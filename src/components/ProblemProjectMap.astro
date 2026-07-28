@@ -1,0 +1,50 @@
+---
+import { withBase } from '../lib/paths';
+
+const connections = [
+  {
+    problems: ['고객 환경'],
+    project: '공유 DB의 예약 작업 분리',
+    evidence: '예정 실행 21/21 · 중복 0건',
+    slug: 'enterprise-chatbot-modernization',
+  },
+  {
+    problems: ['AI 답변'],
+    project: '반복된 AI 답변 오류 재검증',
+    evidence: '실패·표현 변형·기존 정상 답변 재실행',
+    slug: 'prompt-regression',
+  },
+  {
+    problems: ['AI 생성 코드', '반복 업무'],
+    project: 'AI 테스트 자동화',
+    evidence: '검증 통과 후에만 검토용 브랜치 발행',
+    slug: 'ai-test-automation-worker',
+  },
+];
+---
+
+<section class="problem-project-map" aria-labelledby="problem-project-map-title">
+  <div class="problem-project-map__heading">
+    <p>Problem to Proof</p>
+    <h3 id="problem-project-map-title">반복 문제를 증명하는 대표 사례</h3>
+  </div>
+  <ol>
+    {
+      connections.map((connection) => (
+        <li>
+          <div class="problem-project-map__problems">
+            {connection.problems.map((problem) => <span>{problem}</span>)}
+          </div>
+          <span class="problem-project-map__line" aria-hidden="true">
+            <i class="ph ph-arrow-right"></i>
+          </span>
+          <a href={withBase(`work/${connection.slug}/`)}>
+            <strong>{connection.project}</strong>
+            <span>{connection.evidence}</span>
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</section>

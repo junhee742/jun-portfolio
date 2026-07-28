@@ -1,5 +1,6 @@
 ---
 import { productExperience } from '../data/portfolio';
+import CareerArc from './CareerArc.astro';
 ---
 
 <section class="experience-section container" id="experience" aria-labelledby="experience-title">
@@ -9,56 +10,29 @@ import { productExperience } from '../data/portfolio';
       <h2 id="experience-title">한눈에 보는 경력</h2>
     </div>
     <p>
-      한 회사에서 고객사 구축과 클라우드 운영을 맡은 뒤, AI 제품 백엔드와 품질 자동화로
-      역할을 넓혔습니다. 여러 업무가 겹친 기간은 맡은 문제를 기준으로 나눠 적었습니다.
+      성과와 구현 설명은 대표 프로젝트로 넘기고, 여기서는 2022년 이후 맡은 역할이 어떻게
+      달라졌는지만 최근 순으로 정리했습니다.
     </p>
   </div>
 
-  <div class="career-summary">
-    <div class="career-summary__primary">
-      <p class="career-summary__period">2022.11 — 현재</p>
-      <h3>기업 고객용 상담 제품 백엔드</h3>
-      <p>
-        요구사항 분석부터 개발, 고객 검증과 배포까지 맡으며 고객 환경에서 실제로 동작하는
-        조건을 함께 확인해 왔습니다.
-      </p>
-    </div>
-    <dl class="career-summary__facts">
-      <div>
-        <dt>현재</dt>
-        <dd>두 상담 제품이 함께 동작할 조건과 AI 기능 검증</dd>
-      </div>
-      <div>
-        <dt>주력</dt>
-        <dd>기업 고객용 백엔드 · AI 품질 시스템</dd>
-      </div>
-      <div>
-        <dt>업무 범위</dt>
-        <dd>문제 정의 → 구현 → 검증 → 배포</dd>
-      </div>
-    </dl>
-  </div>
+  <CareerArc />
 
-  <div class="experience-list" aria-label="제품별 경력">
+  <ol class="experience-list" aria-label="역할별 경력">
     {
       productExperience.map((item) => (
-        <details class="experience-item" open>
-          <summary>
-            <span class="experience-item__period">{item.period}</span>
-            <span class="experience-item__title">
-              <span>{item.label}</span>
-              <strong>{item.title}</strong>
-            </span>
-            <i class="ph ph-plus" aria-hidden="true" />
-          </summary>
+        <li class="experience-item">
+          <p class="experience-item__period">{item.period}</p>
           <div class="experience-item__body">
+            <span class="experience-item__label">{item.label}</span>
+            <h3>{item.title}</h3>
             <p>{item.summary}</p>
-            <ul>
-              {item.contributions.map((contribution) => <li>{contribution}</li>)}
-            </ul>
           </div>
-        </details>
+          <dl class="experience-item__scope">
+            <dt>맡은 범위</dt>
+            <dd>{item.scope}</dd>
+          </dl>
+        </li>
       ))
     }
-  </div>
+  </ol>
 </section>

@@ -1,16 +1,17 @@
 ---
 import { capabilityLinks } from '../data/portfolio';
+import ProblemProjectMap from './ProblemProjectMap.astro';
 ---
 
 <section class="capability-section container" aria-labelledby="capability-title">
   <div class="section-heading section-heading--split">
     <div>
-      <p class="section-heading__eyebrow">How I Work</p>
+      <p class="section-heading__eyebrow">Problem Areas</p>
       <h2 id="capability-title">제가 반복해서 해결해 온 문제</h2>
     </div>
     <p>
-      제가 어떤 개발자인지는 기술 이름보다 문제를 풀 때 반복한 선택에서 더 잘 드러난다고
-      생각합니다.
+      위 경력이 ‘언제 무엇을 맡았는지’를 보여준다면, 여기서는 역할이 달라져도 계속 마주한
+      문제의 유형을 보여줍니다.
     </p>
   </div>
 
@@ -26,4 +27,6 @@ import { capabilityLinks } from '../data/portfolio';
       ))
     }
   </div>
+
+  <ProblemProjectMap />
 </section>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1487" height="1058" viewBox="0 0 1487 1058" role="img" aria-labelledby="title desc">
   <title id="title">이준희 백엔드 개발자 포트폴리오</title>
-  <desc id="desc">고객 환경과 AI 품질을 함께 보는 백엔드 개발자와 대표 사례 세 가지</desc>
+  <desc id="desc">작은 기능부터 직접 만들며 역할을 넓혀 온 백엔드 개발자와 대표 사례 세 가지</desc>
   <rect width="1487" height="1058" fill="#fbfaf6"/>
 
   <g font-family="Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif">
@@ -9,9 +9,9 @@
     <line x1="0" y1="82" x2="1487" y2="82" stroke="#d8d9df"/>
 
     <text x="100" y="150" fill="#2955d9" font-size="17" font-weight="700" letter-spacing="1.2">기업 고객용 백엔드 · AI 품질 검증</text>
-    <text x="100" y="234" fill="#181a20" font-size="58" font-weight="800" letter-spacing="-2">고객 환경과 AI 품질을</text>
-    <text x="100" y="308" fill="#181a20" font-size="58" font-weight="800" letter-spacing="-2">함께 보는 백엔드 개발자</text>
-    <text x="100" y="360" fill="#5d6068" font-size="23">고객 환경에서 막힐 조건을 먼저 확인하고, 반복된 실패를 다음 변경의 테스트로 남깁니다.</text>
+    <text x="100" y="234" fill="#181a20" font-size="54" font-weight="800" letter-spacing="-2">낯선 문제는 작은 기능부터 직접 만들며 풀고,</text>
+    <text x="100" y="308" fill="#181a20" font-size="54" font-weight="800" letter-spacing="-2">배운 것을 다음 제품과 역할로 이어 왔습니다</text>
+    <text x="100" y="360" fill="#5d6068" font-size="23">반복 업무 자동화에서 시작해 사내 AI 도구, AI 제품 백엔드와 품질 자동화로 이어졌습니다.</text>
 
     <line x1="100" y1="416" x2="1387" y2="416" stroke="#181a20" stroke-width="2"/>
     <text x="100" y="456" fill="#181a20" font-size="22" font-weight="700">대표 사례</text>

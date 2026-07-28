@@ -1,37 +1,23 @@
 ---
-import { evidenceGroups, skillGroups, workingPrinciples } from '../data/portfolio';
+import { skillGroups, workingPrinciples } from '../data/portfolio';
 ---
 
 <section class="evidence-section container" id="evidence" aria-labelledby="evidence-title">
   <div class="section-heading section-heading--split">
     <div>
-      <p class="section-heading__eyebrow">Evidence & Practice</p>
-      <h2 id="evidence-title">확인한 결과와 일하는 방식</h2>
+      <p class="section-heading__eyebrow">Skills & Collaboration</p>
+      <h2 id="evidence-title">기술과 협업 방식</h2>
     </div>
     <p>
-      결과를 적을 때는 제가 맡은 일과 확인한 환경을 함께 씁니다. 고객과 내부 시스템을 알아볼
-      수 있는 정보는 공개하지 않습니다.
+      프로젝트에서 사용해 온 기술 범위와, 다른 사람과 함께 일할 때 지키는 기준을 분리해
+      정리했습니다.
     </p>
-  </div>
-
-  <div class="evidence-grid">
-    {
-      evidenceGroups.map((group) => (
-        <article class="evidence-card">
-          <h3>{group.title}</h3>
-          <p>{group.description}</p>
-          <ul>
-            {group.items.map((item) => <li>{item}</li>)}
-          </ul>
-        </article>
-      ))
-    }
   </div>
 
   <div class="practice-grid">
     <div class="practice-panel">
       <p class="practice-panel__eyebrow">How I Work</p>
-      <h3>제가 문제를 풀 때 지키는 기준</h3>
+      <h3>협업할 때 남기는 것</h3>
       <ol>
         {workingPrinciples.map((principle) => <li>{principle}</li>)}
       </ol>
