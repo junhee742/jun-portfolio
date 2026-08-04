@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Icon from '../components/Icon.astro';
+import Footer from '../components/Footer.astro';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout title="페이지를 찾을 수 없습니다 — 이준희" description="요청한 주소에 해당하는 페이지가 없습니다.">
+  <Header />
+  <main id="main-content">
+    <section class="hero container" aria-labelledby="not-found-title">
+      <p class="hero__eyebrow">404</p>
+      <h1 id="not-found-title">페이지를 찾을 수 없습니다.</h1>
+      <p class="hero__summary">주소가 바뀌었거나 삭제된 페이지입니다. 아래에서 다시 찾아보세요.</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href={withBase()}>홈으로</a>
+        <a class="text-link" href={`${withBase()}#work`}>
+          대표 사례 보기
+          <Icon name="arrow-right" />
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
