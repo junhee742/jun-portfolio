@@ -1,46 +1,40 @@
 ---
 import { skillGroups, workingPrinciples } from '../data/portfolio';
+import Icon from './Icon.astro';
 ---
 
-<section class="evidence-section container" id="evidence" aria-labelledby="evidence-title">
-  <div class="section-heading section-heading--split">
-    <div>
-      <p class="section-heading__eyebrow">Skills & Collaboration</p>
-      <h2 id="evidence-title">기술과 협업 방식</h2>
-    </div>
-    <p>
-      프로젝트에서 사용해 온 기술 범위와, 다른 사람과 함께 일할 때 지키는 기준을 분리해
-      정리했습니다.
-    </p>
+<section class="evidence-section container" id="about-me" aria-labelledby="about-me-title">
+  <div class="section-heading">
+    <p class="section-heading__eyebrow">About</p>
+    <h2 id="about-me-title">일하는 방식</h2>
   </div>
 
-  <div class="practice-grid">
-    <div class="practice-panel">
-      <p class="practice-panel__eyebrow">How I Work</p>
-      <h3>협업할 때 남기는 것</h3>
-      <ol>
-        {workingPrinciples.map((principle) => <li>{principle}</li>)}
-      </ol>
-    </div>
+  <ol class="principles-list">
+    {workingPrinciples.map((principle) => <li>{principle}</li>)}
+  </ol>
 
-    <details class="skills-panel">
-      <summary>
-        <span>
-          <span class="practice-panel__eyebrow">Technical Range</span>
-          <strong>기술 스택 전체 보기</strong>
-        </span>
-        <i class="ph ph-plus" aria-hidden="true" />
-      </summary>
-      <dl>
-        {
-          skillGroups.map((group) => (
-            <div>
-              <dt>{group.label}</dt>
-              <dd>{group.values}</dd>
-            </div>
-          ))
-        }
-      </dl>
-    </details>
+  <details class="skills-panel">
+    <summary>
+      <span>
+        <span class="practice-panel__eyebrow">Technical Range</span>
+        <strong>기술 스택</strong>
+      </span>
+      <Icon name="plus" />
+    </summary>
+    <dl>
+      {
+        skillGroups.map((group) => (
+          <div>
+            <dt>{group.label}</dt>
+            <dd>{group.values}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </details>
+
+  <div class="contact-cta">
+    <p>이력서와 상세 경력기술서는 메일로 보내드립니다.</p>
+    <a class="button button--primary" href="mailto:junhee742@naver.com">이메일 보내기</a>
   </div>
 </section>

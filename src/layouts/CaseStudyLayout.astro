@@ -2,7 +2,9 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 import { withBase } from '../lib/paths';
+import { careerTracks } from '../data/portfolio';
 
 interface Props {
   title: string;
@@ -14,11 +16,23 @@ interface Props {
   role: string;
   scope: string;
   evidence: string[];
+  stack: string[];
   canonicalPath: string;
 }
 
-const { title, description, order, period, product, capability, role, scope, evidence, canonicalPath } = Astro.props;
-const number = String(order).padStart(2, '0');
+const { title, description, period, product, capability, role, scope, stack, canonicalPath } = Astro.props;
+
+const caseList = careerTracks.flatMap((track) =>
+  track.items.flatMap((item) =>
+    item.slug === null ? [] : [{ slug: item.slug, title: item.title }],
+  ),
+);
+const currentSlug = canonicalPath.replace(/\/+$/, '').split('/').pop();
+const currentIndex = caseList.findIndex((entry) => entry.slug === currentSlug);
+const number = String(currentIndex + 1).padStart(2, '0');
+const prevCase = currentIndex > 0 ? caseList[currentIndex - 1] : null;
+const nextCase =
+  currentIndex >= 0 && currentIndex < caseList.length - 1 ? caseList[currentIndex + 1] : null;
 ---
 
 <BaseLayout title={`${title} — 이준희`} description={description} canonicalPath={canonicalPath} type="article">
@@ -26,8 +40,8 @@ const number = String(order).padStart(2, '0');
   <main id="main-content">
     <article class="case-study">
       <div class="container case-study__header">
-        <a class="case-study__back" href={`${withBase()}#selected-work`}>
-          <i class="ph ph-arrow-left" aria-hidden="true"></i>
+        <a class="case-study__back" href={`${withBase()}#work`}>
+          <Icon name="arrow-left" />
           대표 사례 목록
         </a>
         <p class="case-study__number">대표 사례 {number}</p>
@@ -44,23 +58,49 @@ const number = String(order).padStart(2, '0');
             <dt>확인한 범위</dt>
             <dd>{scope}</dd>
           </div>
-          <div>
-            <dt>핵심 근거</dt>
-            <dd>{evidence.join(' · ')}</dd>
-          </div>
         </dl>
+
+        <div class="case-study__stack-wrap">
+          <span class="case-study__stack-label">기술</span>
+          <ul class="case-study__stack">
+            {stack.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
       </div>
 
       <div class="container case-study__content prose">
         <slot />
       </div>
 
-      <div class="container case-study__next">
-        <a href={`${withBase()}#selected-work`}>
-          다른 사례 보기
-          <i class="ph ph-arrow-right" aria-hidden="true"></i>
-        </a>
-      </div>
+      <nav class="container case-study__next" aria-label="이전·다음 사례">
+        <div class="case-study__next-prev">
+          {
+            prevCase && (
+              <a href={withBase(`work/${prevCase.slug}/`)}>
+                <Icon name="arrow-left" />
+                <span>
+                  <span class="case-study__next-label">이전 사례</span>
+                  <strong>{prevCase.title}</strong>
+                </span>
+              </a>
+            )
+          }
+        </div>
+        <a class="case-study__all" href={`${withBase()}#work`}>대표 사례 전체 보기</a>
+        <div class="case-study__next-next">
+          {
+            nextCase && (
+              <a href={withBase(`work/${nextCase.slug}/`)}>
+                <span>
+                  <span class="case-study__next-label">다음 사례</span>
+                  <strong>{nextCase.title}</strong>
+                </span>
+                <Icon name="arrow-right" />
+              </a>
+            )
+          }
+        </div>
+      </nav>
     </article>
   </main>
   <Footer />

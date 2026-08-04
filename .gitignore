@@ -26,5 +26,6 @@ pnpm-debug.log*
 # local design verification artifacts
 .qa/
 .omx/
+.omo/
 design-qa.md
 .vercel

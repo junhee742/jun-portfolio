@@ -1,0 +1,74 @@
+---
+import { withBase } from '../lib/paths';
+import { getCollection } from 'astro:content';
+import { careerSummary, careerTracks } from '../data/portfolio';
+import Icon from './Icon.astro';
+
+const work = await getCollection('work');
+const workSlugs = new Set(work.map((entry) => entry.id));
+
+for (const track of careerTracks) {
+  for (const item of track.items) {
+    if (item.slug !== null && !workSlugs.has(item.slug)) {
+      throw new Error(
+        `CareerTracks: work slug "${item.slug}" (track: ${track.id}) does not exist in src/content/work.`,
+      );
+    }
+  }
+}
+---
+
+<section class="tracks-section container" id="work" aria-labelledby="tracks-title">
+  <div class="section-heading section-heading--split">
+    <div>
+      <p class="section-heading__eyebrow">Work</p>
+      <h2 id="tracks-title">한 회사에서 넓혀 온 네 가지 일</h2>
+    </div>
+    <p>{careerSummary.note}</p>
+  </div>
+
+  <p class="tracks-company">{careerSummary.company} · {careerSummary.period}</p>
+
+  <ol class="tracks-list">
+    {
+      careerTracks.map((track) => (
+        <li class="tracks-track" id={track.id}>
+          <div class="tracks-track__header">
+            <h3>{track.label}</h3>
+            <span class="tracks-track__period">{track.period}</span>
+            <p class="tracks-track__summary">{track.summary}</p>
+            <ul class="tracks-track__stack">
+              {track.stack.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <ul class="tracks-items">
+            {
+              track.items.map((item) =>
+                item.slug ? (
+                  <li class="tracks-item">
+                    <a href={withBase(`work/${item.slug}/`)}>
+                      <span class="tracks-item__copy">
+                        <strong>{item.title}</strong>
+                        <span class="tracks-item__line">{item.line}</span>
+                      </span>
+                      <span class="tracks-item__metric">{item.metric}</span>
+                      <Icon name="arrow-up-right" />
+                    </a>
+                  </li>
+                ) : (
+                  <li class="tracks-item tracks-item--static">
+                    <span class="tracks-item__copy">
+                      <strong>{item.title}</strong>
+                      <span class="tracks-item__line">{item.line}</span>
+                    </span>
+                    <span class="tracks-item__metric">{item.metric}</span>
+                  </li>
+                ),
+              )
+            }
+          </ul>
+        </li>
+      ))
+    }
+  </ol>
+</section>

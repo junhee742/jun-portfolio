@@ -1,134 +1,195 @@
-export const capabilityLinks = [
+export const provenResults = [
   {
-    eyebrow: '01 · 고객 환경',
-    title: '같은 기능도 고객 환경마다 다르게 동작합니다.',
-    description:
-      '통신망, 권한, 외부 시스템과 배포 절차가 달라 코드가 같아도 검증 조건은 달라집니다.',
-    href: '#experience',
+    value: "54/54",
+    label: "AI 답변 회귀검증 통과",
+    note: "변경 전 44/54",
+    slug: "prompt-regression",
   },
   {
-    eyebrow: '02 · AI 답변',
-    title: '한 질문을 고치면 다른 정상 답변이 깨질 수 있습니다.',
-    description:
-      '모델과 답변 규칙이 바뀔 때마다 실패 질문뿐 아니라 표현이 다른 질문과 기존 정상 답변도 다시 확인해야 합니다.',
-    href: '#selected-work',
+    value: "80.7%",
+    label: "한 서비스 코드 실행 범위",
+    note: "테스트 755개",
+    slug: "ai-test-automation-worker",
   },
   {
-    eyebrow: '03 · AI 생성 코드',
-    title: '코드가 만들어졌다는 사실만으로는 배포할 수 없습니다.',
-    description:
-      'AI가 만든 변경은 허용한 파일만 바꿨는지, 실제로 실행되는지와 기존 기능을 깨뜨리지 않는지 확인해야 합니다.',
-    href: '#selected-work',
+    value: "21/21",
+    label: "예약 작업 정확히 한 번씩",
+    note: "중복 0건",
+    slug: "enterprise-chatbot-modernization",
   },
   {
-    eyebrow: '04 · 반복 업무',
-    title: '사람마다 다른 방식으로 반복하면 결과도 달라집니다.',
-    description:
-      '반복 SQL 생성, 테스트 대상 선정과 운영 대응처럼 기준이 있는 일은 도구와 문서로 남겨야 다시 확인할 수 있습니다.',
-    href: '#more-work',
+    value: "8시간 → 1시간",
+    label: "반복 SQL 작성 시간",
+    note: "DB 객체 450개",
+    slug: null,
   },
 ];
 
-export const productExperience = [
-  {
-    period: '2026.07 — 현재',
-    label: '고객 환경 검증',
-    title: '서로 다른 상담 제품의 공존 조건 설계',
-    summary:
-      '구조가 다른 두 제품이 같은 고객 환경에서 동작할 수 있는 조건을 검토하고 있습니다.',
-    scope: '문제 정의 · 공존 조건 설계 · 검증 기준과 전환 절차 작성',
-  },
-  {
-    period: '2026.01 — 05',
-    label: 'AI 제품 백엔드',
-    title: 'AI 기능 개발과 품질 검증',
-    summary:
-      'Python/FastAPI 기반 AI 기능을 개발하고, 답변 오류와 테스트 공백을 다시 확인할 수 있는 구조를 만들었습니다.',
-    scope: 'AI 백엔드 개발 · 답변 품질 검증 · 테스트 자동화',
-  },
-  {
-    period: '2024.06 — 2025.03',
-    label: '기업용 제품 운영',
-    title: 'AWS 기반 상담 솔루션 고객사 운영',
-    summary:
-      '고객사별 설정과 요구사항을 공통 제품과 분리해 관리하고, 배포·모니터링·장애 대응을 맡았습니다.',
-    scope: '고객사 설정 관리 · 요구사항 개발 · 배포 · 모니터링 · 장애 대응',
-  },
-  {
-    period: '2023.02 — 2025.12',
-    label: '금융권 고객사 내부망',
-    title: '상담 시스템 구축·고도화와 외부 연동',
-    summary:
-      '요구사항 분석부터 Java/Spring 기능 개발, 고객사의 외부 업무 시스템 연동, 고객 검증과 운영 이행까지 수행했습니다.',
-    scope: '요구사항 분석 · Java/Spring 개발 · 외부 연동 · 고객 검증 · 운영 이행',
-  },
-];
+export const careerSummary = {
+  company: "(주)스펙트라 제품개발부",
+  period: "2022.11 — 현재",
+  note: "한 회사에서 아래 네 가지 일을 번갈아, 때로는 나란히 맡았습니다.",
+};
 
-export const supportingWork = [
+export const careerTracks = [
   {
-    period: '2024.01 — 03',
-    title: 'Slack 기반 사내 AI 챗봇 단독 개발',
+    id: "ai-product",
+    label: "AI 제품 · LLM",
+    period: "2026.01 — 07",
     summary:
-      '아이디어 제안부터 설계·개발·배포·운영을 맡고, 모델·비용 비교와 사용자 가이드, 사내 발표 자료를 작성했습니다.',
-    evidence: '아이디어 제안 → 개발·배포 → 운영·사용자 안내',
-    slug: null,
+      "Agent·RAG 기능을 만들고, 모델이 바뀌어도 다시 확인할 기준을 남겼습니다.",
+    stack: [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "LangChain",
+      "Elasticsearch",
+      "OpenAI API",
+    ],
+    items: [
+      {
+        title: "AI 답변 회귀검증",
+        line: "실패한 질문만 고치지 않고, 표현을 바꾼 질문과 기존 정상 답변까지 함께 재실행했습니다.",
+        metric: "고정 원문 44/54 → 54/54",
+        slug: "prompt-regression",
+      },
+      {
+        title: "검색 범위를 제어하는 RAG",
+        line: "LLM은 검색 후보만 제안하고, 실제 필터와 대체 경로는 코드가 정하게 했습니다.",
+        metric: "결과 없으면 기본 검색 fallback",
+        slug: "rag-search-ingestion",
+      },
+      {
+        title: "이미지·음성 입력을 Agent에 연결",
+        line: "LangGraph에 이미지 설명 노드를 붙이고, 음성 인식 후보를 비용·하드웨어까지 놓고 비교했습니다.",
+        metric: "STT 후보 6개 비교 후 선택",
+        slug: null,
+      },
+      {
+        title: "Slack 사내 AI 챗봇 단독 개발",
+        line: "아이디어 제안부터 설계·개발·배포·운영까지 혼자 맡았습니다.",
+        metric: "18명 · 33개 스레드 · 233개 댓글",
+        slug: null,
+      },
+    ],
   },
   {
-    period: '2026.03 — 05',
-    title: 'AI 서비스 장애 구간과 외부 의존성 분리',
+    id: "enterprise",
+    label: "고객사 구축 · 연동",
+    period: "2023.02 — 현재",
     summary:
-      '고객이 전달한 발생 시각, 애플리케이션 로그와 외부 AI 제공사의 장애 기록을 대조해 내부 코드와 외부 호출 문제를 구분했습니다.',
-    evidence: '애플리케이션 로그와 외부 제공사 장애 기록을 함께 대조',
-    slug: null,
+      "기능을 만들기 전에 망, 권한, 연동 대상과 운영 반영 절차부터 맞췄습니다.",
+    stack: [
+      "Java",
+      "Spring Boot",
+      "Spring Web MVC",
+      "Oracle",
+      "MyBatis",
+      "EAI",
+      "Quartz",
+    ],
+    items: [
+      {
+        title: "금융권 상담 시스템 구축",
+        line: "방화벽과 테스트 계정이 안 열리면 코드가 완성돼도 검증이 시작되지 않아, 개발 순서를 뒤집었습니다.",
+        metric: "모바일·브라우저 8개 조합 검증",
+        slug: "financial-customer-system",
+      },
+      {
+        title: "공유 DB의 예약 작업 분리",
+        line: "새 DB 계정도 새 API도 만들지 않고, 충돌 지점을 테이블 하나로 좁혀 설정으로 갈랐습니다.",
+        metric: "예정 실행 21/21 · 중복 0건",
+        slug: "enterprise-chatbot-modernization",
+      },
+    ],
   },
   {
-    period: '2026.02 — 03',
-    title: '이미지·음성 입력을 AI 처리 흐름에 연결',
+    id: "quality",
+    label: "테스트 · 개발 생산성",
+    period: "2025.03 — 2026.06",
     summary:
-      '이미지 설명을 검색·답변 흐름에 넣고, 음성 인식 후보를 품질·비용·하드웨어·제품 영향으로 비교해 시연 방식을 정했습니다.',
-    evidence: '품질·비용·하드웨어·제품 영향을 함께 비교',
-    slug: null,
+      "빨리 만드는 자동화보다, 검증을 통과한 결과만 나가는 자동화를 우선했습니다.",
+    stack: [
+      "Python",
+      "Pytest",
+      "JUnit 5",
+      "Mockito",
+      "GitHub Actions",
+      "SonarQube",
+    ],
+    items: [
+      {
+        title: "AI 테스트 자동화",
+        line: "'코드를 만들었다'와 '반영해도 된다'를 같은 성공으로 보지 않고, 생성과 발행 사이에 검증 단계를 넣었습니다.",
+        metric: "코드 실행 범위 80.7% · 테스트 755개",
+        slug: "ai-test-automation-worker",
+      },
+      {
+        title: "DB 권한·synonym SQL 생성 자동화",
+        line: "DB 객체를 유형별로 분류해 규칙에 맞는 SQL을 뽑는 Java 생성기를 만들었습니다.",
+        metric: "객체 450개 · 8시간 → 1시간 미만",
+        slug: null,
+      },
+    ],
   },
   {
-    period: '2025.03 — 09',
-    title: 'DB 권한·별칭 SQL 생성 자동화',
+    id: "operations",
+    label: "운영 · 안정화",
+    period: "2024.06 — 2026.05",
     summary:
-      '테이블·뷰 등 DB 객체 유형별 규칙을 적용하는 Java 생성기를 만들어 반복 SQL을 같은 형식으로 다시 만들고 입력·결과 개수를 대조했습니다.',
-    evidence: 'DB 객체 유형별 규칙 적용 · 입력과 생성 결과 개수 대조',
-    slug: null,
+      "장애를 한 범주로 묶지 않고, 로그와 시간대를 대조해 원인 범위를 좁혔습니다.",
+    stack: ["AWS", "Docker", "Kubernetes", "Linux", "Zabbix", "PostgreSQL"],
+    items: [
+      {
+        title: "AWS 기반 상담 솔루션 고객사 운영",
+        line: "고객사별 설정을 공통 제품과 분리해 관리하고, 알림부터 대응 기록까지 단독으로 이어갔습니다.",
+        metric: "Zabbix·Slack 24시간 알림 운영",
+        slug: null,
+      },
+      {
+        title: "AI 서비스 장애의 외부 의존성 분리",
+        line: "애플리케이션 로그와 외부 LLM 제공사의 장애 기록을 같은 시간대로 맞춰 원인을 갈랐습니다.",
+        metric: "50초 이상 74건을 외부 호출로 확정",
+        slug: null,
+      },
+    ],
   },
 ];
 
 export const workingPrinciples = [
-  '새 영역을 맡으면 작은 기능으로 동작을 확인한 뒤 작업 범위를 넓힙니다.',
-  '어떤 선택을 했는지보다 왜 선택했는지와 어떻게 확인할지를 함께 기록합니다.',
-  '장애와 이슈는 원인만 적지 않고 재현 조건과 다음 대응 절차까지 공유합니다.',
-  '제가 직접 한 일, 팀이 함께 낸 결과와 AI가 만든 산출물을 구분해 설명합니다.',
+  "개발 전에 막힐 조건부터 확인합니다. 금융권 구축에서는 방화벽과 테스트 계정을 먼저 연 뒤 기능 개발을 시작했습니다.",
+  "LLM이 제안할 영역과 코드가 보장할 영역을 나눕니다. RAG에서는 모델이 후보만 내고, 필터 적용 여부는 코드가 정합니다.",
+  "확인한 범위만 말합니다. 한 서비스에서 나온 80.7%를 전체 서비스의 결과로 쓰지 않았습니다.",
 ];
 
 export const skillGroups = [
   {
-    label: 'Backend',
-    values: 'Java · Spring Boot · Spring Web MVC · Python · FastAPI · REST API · Pydantic · SQLAlchemy',
+    label: "Backend",
+    values:
+      "Java · Spring Boot · Spring Web MVC · Python · FastAPI · REST API · Pydantic · SQLAlchemy",
   },
   {
-    label: 'AI · LLM',
-    values: 'LangGraph · LangChain · OpenAI API · RAG · Tool Calling · STT · Multimodal Input',
+    label: "AI · LLM",
+    values:
+      "LangGraph · LangChain · OpenAI API · RAG · Tool Calling · STT · Multimodal Input",
   },
   {
-    label: 'Search · Data',
-    values: 'Elasticsearch · BM25 · Metadata Filtering · PostgreSQL · Oracle · MyBatis',
+    label: "Search · Data",
+    values:
+      "Elasticsearch · BM25 · Metadata Filtering · PostgreSQL · Oracle · MyBatis",
   },
   {
-    label: 'Architecture',
-    values: 'Spring Cloud Gateway · BFF · Feign · Kafka · SSO/JWT · EAI',
+    label: "Architecture",
+    values: "Spring Cloud Gateway · BFF · Feign · Kafka · SSO/JWT · EAI",
   },
   {
-    label: 'Test · Delivery',
-    values: 'Pytest · JUnit 5 · Mockito · JaCoCo · SonarQube · Playwright · GitHub Actions · Jenkins',
+    label: "Test · Delivery",
+    values:
+      "Pytest · JUnit 5 · Mockito · JaCoCo · SonarQube · Playwright · GitHub Actions · Jenkins",
   },
   {
-    label: 'Operations',
-    values: 'Docker · Kubernetes · Helm · ArgoCD · Linux · AWS · Zabbix · Slack',
+    label: "Operations",
+    values:
+      "Docker · Kubernetes · Helm · ArgoCD · Linux · AWS · Zabbix · Slack",
   },
 ];
