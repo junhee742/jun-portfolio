@@ -142,8 +142,8 @@ export const careerTracks = [
     items: [
       {
         title: "AWS 기반 상담 솔루션 고객사 운영",
-        line: "고객사별 설정을 공통 제품과 분리해 관리하고, 알림부터 대응 기록까지 단독으로 이어갔습니다.",
-        metric: "Zabbix·Slack 24시간 알림 운영",
+        line: "고객사별 설정을 공통 제품과 분리해 관리하고, Zabbix·Slack 알림부터 대응 기록까지 단독으로 이어갔습니다.",
+        metric: "약 40개 고객사 운영",
         slug: null,
       },
       {
