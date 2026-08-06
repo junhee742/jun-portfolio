@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="632" viewBox="0 0 1200 632" role="img" aria-labelledby="title desc">
+  <title id="title">검색 후보 제안과 검색 조건 결정의 책임 분리</title>
+  <desc id="desc">모델은 검색 범위 후보만 제안하고, 코드가 정규화와 메타데이터 대조를 거쳐 반영 여부를 정합니다. 제한 검색 결과가 없으면 기본 검색으로 되돌아갑니다.</desc>
+  <rect width="1200" height="632" fill="#fbfaf6"/>
+  <text x="64" y="76" fill="#181a20" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="34" font-weight="700">모델은 후보만 내고, 검색 조건은 코드가 정합니다</text>
+  <text x="64" y="114" fill="#5d6068" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="19">잘못된 추정 하나가 검색 결과 전체를 비우지 않도록 책임을 나눴습니다.</text>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <text x="64" y="172" fill="#2955d9" font-size="16" font-weight="700">모델이 하는 일</text>
+    <rect x="64" y="186" width="1072" height="80" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="92" y="222" fill="#181a20" font-size="21" font-weight="700">검색 범위 후보 제안</text>
+    <text x="92" y="250" fill="#5d6068" font-size="16">질문에 명시되거나 강하게 암시된 단서만 후보로 내놓습니다. 여기까지가 모델의 역할입니다.</text>
+
+    <path d="M600 266v34" stroke="#2955d9" stroke-width="2"/>
+    <path d="m593 293 7 8 7-8" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <text x="64" y="336" fill="#2955d9" font-size="16" font-weight="700">코드가 정하는 것</text>
+    <g transform="translate(64 350)">
+      <rect width="344" height="132" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="40" fill="#2955d9" font-size="16" font-weight="700">01</text>
+      <text x="24" y="78" fill="#181a20" font-size="21" font-weight="700">후보 정규화</text>
+      <text x="24" y="110" fill="#5d6068" font-size="16">표기가 달라도 같은 값으로</text>
+    </g>
+    <path d="M422 416h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m453 409 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(474 350)">
+      <rect width="344" height="132" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="40" fill="#2955d9" font-size="16" font-weight="700">02</text>
+      <text x="24" y="78" fill="#181a20" font-size="21" font-weight="700">메타데이터 대조</text>
+      <text x="24" y="110" fill="#5d6068" font-size="16">실제로 있는 값인지 확인</text>
+    </g>
+    <path d="M832 416h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m863 409 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <g transform="translate(884 350)">
+      <rect width="252" height="132" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+      <text x="24" y="40" fill="#2955d9" font-size="16" font-weight="700">03</text>
+      <text x="24" y="78" fill="#181a20" font-size="21" font-weight="700">반영 결정</text>
+      <text x="24" y="110" fill="#5d6068" font-size="16">통과한 후보만 적용</text>
+    </g>
+  </g>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <rect x="64" y="516" width="524" height="80" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="88" y="548" fill="#5d6068" font-size="15">제한 검색에 결과가 있으면</text>
+    <text x="88" y="578" fill="#181a20" font-size="21" font-weight="700">검증된 범위로 좁혀 검색</text>
+
+    <rect x="612" y="516" width="524" height="80" rx="4" fill="#2955d9"/>
+    <text x="636" y="548" fill="#ffffff" font-size="15" opacity="0.85">결과가 없으면</text>
+    <text x="636" y="578" fill="#ffffff" font-size="21" font-weight="700">기본 검색으로 되돌림</text>
+  </g>
+</svg>

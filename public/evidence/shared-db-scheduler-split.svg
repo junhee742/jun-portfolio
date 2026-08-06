@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="616" viewBox="0 0 1200 616" role="img" aria-labelledby="title desc">
+  <title id="title">공유 스키마에서 예약 작업 테이블만 분리한 구조</title>
+  <desc id="desc">업무 테이블은 이미 제품별 접두어로 나뉘어 있었고 예약 작업 테이블만 겹쳤습니다. 접두어를 달리해 분리한 뒤 로컬 2노드에서 확인한 결과입니다.</desc>
+  <rect width="1200" height="616" fill="#fbfaf6"/>
+  <text x="64" y="76" fill="#181a20" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="34" font-weight="700">충돌 지점은 예약 작업 테이블 하나였습니다</text>
+  <text x="64" y="114" fill="#5d6068" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="19">계정을 나누거나 제품 사이에 API를 두기 전에, 설정만으로 갈라지는지부터 확인했습니다.</text>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <text x="64" y="170" fill="#5d6068" font-size="16" font-weight="700">확인한 상태</text>
+    <rect x="64" y="184" width="524" height="228" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="88" y="216" fill="#5d6068" font-size="15">하나의 DB 계정 · 하나의 스키마</text>
+
+    <rect x="88" y="234" width="230" height="66" rx="4" fill="#fbfaf6" stroke="#d8d9df"/>
+    <text x="108" y="262" fill="#181a20" font-size="17" font-weight="700">업무 테이블 A</text>
+    <text x="108" y="285" fill="#5d6068" font-size="15">제품별 접두어로 분리됨</text>
+
+    <rect x="334" y="234" width="230" height="66" rx="4" fill="#fbfaf6" stroke="#d8d9df"/>
+    <text x="354" y="262" fill="#181a20" font-size="17" font-weight="700">업무 테이블 B</text>
+    <text x="354" y="285" fill="#5d6068" font-size="15">제품별 접두어로 분리됨</text>
+
+    <rect x="88" y="318" width="476" height="70" rx="4" fill="#ffffff" stroke="#2955d9" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="108" y="348" fill="#2955d9" font-size="17" font-weight="700">예약 작업 테이블 — 두 제품이 같은 이름을 씀</text>
+    <text x="108" y="372" fill="#5d6068" font-size="15">실행 상태가 서로 섞일 수 있는 유일한 지점</text>
+
+    <path d="M604 298h38" stroke="#2955d9" stroke-width="2"/>
+    <path d="m635 291 8 7-8 7" fill="none" stroke="#2955d9" stroke-width="2"/>
+
+    <text x="668" y="170" fill="#2955d9" font-size="16" font-weight="700">설계한 분리안</text>
+    <rect x="668" y="184" width="468" height="228" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="692" y="216" fill="#5d6068" font-size="15">같은 계정 · 같은 스키마 · 제품 소스 변경 없음</text>
+
+    <rect x="692" y="234" width="202" height="66" rx="4" fill="#fbfaf6" stroke="#d8d9df"/>
+    <text x="712" y="262" fill="#181a20" font-size="17" font-weight="700">업무 테이블 A</text>
+    <text x="712" y="285" fill="#5d6068" font-size="15">그대로</text>
+
+    <rect x="910" y="234" width="202" height="66" rx="4" fill="#fbfaf6" stroke="#d8d9df"/>
+    <text x="930" y="262" fill="#181a20" font-size="17" font-weight="700">업무 테이블 B</text>
+    <text x="930" y="285" fill="#5d6068" font-size="15">그대로</text>
+
+    <rect x="692" y="318" width="202" height="70" rx="4" fill="#2955d9"/>
+    <text x="712" y="348" fill="#ffffff" font-size="17" font-weight="700">예약 작업 A</text>
+    <text x="712" y="372" fill="#ffffff" font-size="15" opacity="0.85">접두어 분리</text>
+
+    <rect x="910" y="318" width="202" height="70" rx="4" fill="#2955d9"/>
+    <text x="930" y="348" fill="#ffffff" font-size="17" font-weight="700">예약 작업 B</text>
+    <text x="930" y="372" fill="#ffffff" font-size="15" opacity="0.85">접두어 분리</text>
+  </g>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <rect x="64" y="448" width="344" height="104" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="88" y="482" fill="#5d6068" font-size="15">운영 조건을 재현한 로컬 2노드</text>
+    <text x="88" y="521" fill="#181a20" font-size="25" font-weight="700">예정 실행 21/21 · 중복 0건</text>
+
+    <rect x="428" y="448" width="344" height="104" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="452" y="482" fill="#5d6068" font-size="15">한 노드를 멈췄을 때</text>
+    <text x="452" y="521" fill="#181a20" font-size="25" font-weight="700">한 구간 이내 인계</text>
+
+    <rect x="792" y="448" width="344" height="104" fill="#ffffff" stroke="#d8d9df"/>
+    <text x="816" y="482" fill="#5d6068" font-size="15">내부 검증환경</text>
+    <text x="816" y="521" fill="#181a20" font-size="25" font-weight="700">16시간 연속 실행</text>
+  </g>
+</svg>
