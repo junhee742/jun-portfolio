@@ -637,6 +637,21 @@ a {
   word-break: keep-all;
 }
 
+.contact-cta__actions {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-cta .contact-cta__address {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
 .site-footer {
   margin-top: 72px;
   border-top: 1px solid var(--line);
@@ -658,7 +673,8 @@ a {
 
 .site-footer__links {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 12px 24px;
   color: var(--ink);
   font-weight: 650;
 }
@@ -1130,6 +1146,10 @@ a {
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
+  }
+
+  .contact-cta__actions {
+    align-items: flex-start;
   }
 
   .case-study__next {
