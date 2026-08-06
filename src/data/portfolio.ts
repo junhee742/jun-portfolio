@@ -28,7 +28,7 @@ export const provenResults = [
 export const careerSummary = {
   company: "(주)스펙트라 제품개발부",
   period: "2022.11 — 현재",
-  note: "한 회사에서 아래 네 가지 일을 번갈아, 때로는 나란히 맡았습니다.",
+  note: "번갈아 맡기도, 나란히 맡기도 했습니다.",
 };
 
 export const careerTracks = [
@@ -56,7 +56,7 @@ export const careerTracks = [
       {
         title: "검색 범위를 제어하는 RAG",
         line: "LLM은 검색 후보만 제안하고, 실제 필터와 대체 경로는 코드가 정하게 했습니다.",
-        metric: "결과 없으면 기본 검색 fallback",
+        metric: "변경 경로 4곳 정적 검사·테스트",
         slug: "rag-search-ingestion",
       },
       {

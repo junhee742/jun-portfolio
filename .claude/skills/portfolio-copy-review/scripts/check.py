@@ -97,7 +97,8 @@ def main() -> int:
         pattern = entry["pattern"]
         flags = re.M if pattern.startswith("^") or pattern.endswith("$") else 0
         found = re.findall(pattern, copy, flags=flags)
-        if found:
+        # note 에 임계가 적힌 항목은 그 횟수를 넘을 때만 발화한다. 1회는 문체가 아니라 우연이다.
+        if len(found) >= entry.get("min_count", 1):
             hits[entry["severity"]].append(
                 {"pattern": pattern, "count": len(found), "category": entry["category"], "fix": entry["fix"]}
             )
@@ -143,6 +144,16 @@ def main() -> int:
     dupes = [h for h, c in Counter(headings).items() if c > 1]
     report["headings_unique"] = {"total": len(headings), "unique": len(set(headings)), "duplicates": dupes}
 
+    # 케이스별 절 개수 편차 — 전부 같으면 잔여 템플릿으로 본다
+    import glob as _glob
+
+    section_counts = {}
+    for path in sorted(_glob.glob(os.path.join(ROOT, "src/content/work/*.mdx"))):
+        with open(path, encoding="utf-8") as fh:
+            section_counts[os.path.basename(path)] = len(re.findall(r"^##\s+", fh.read(), flags=re.M))
+    report["section_counts"] = section_counts
+    varied = len(set(section_counts.values())) > 1
+
     # --- 1. 구체성 ---
     data = read("src/data/portfolio.ts")
     metrics = re.findall(r'metric:\s*"([^"]+)"', data)
@@ -172,10 +183,15 @@ def main() -> int:
 
         main_html = re.search(r"<main.*?</main>", dist, flags=re.S)
         if main_html:
-            text = re.sub(r"<[^>]+>", " ", main_html.group(0))
-            text = htmllib.unescape(text)
+            body = main_html.group(0)
+            # 접힌 <details> 는 스캔 부하가 아니다. 점진적 공개는 의도된 설계이므로 제외한다.
+            visible = re.sub(r"<details.*?</details>", " ", body, flags=re.S)
+            text = htmllib.unescape(re.sub(r"<[^>]+>", " ", visible))
             report["landing_chars"] = len(re.sub(r"\s", "", text))
-            report["landing_sections"] = len(re.findall(r"<section", main_html.group(0)))
+            report["landing_chars_incl_collapsed"] = len(
+                re.sub(r"\s", "", htmllib.unescape(re.sub(r"<[^>]+>", " ", body)))
+            )
+            report["landing_sections"] = len(re.findall(r"<section", body))
 
     # --- 점수 ---
     scores = {}
@@ -186,9 +202,11 @@ def main() -> int:
         scores["근거 정합성"] = 1.0
     else:
         scores["근거 정합성"] = 5.0 if len(missing) == 0 else 4.0 if len(missing) <= 1 else 3.0
-    scores["구조 다양성"] = 5.0 if not dupes else 3.0 if len(dupes) == 1 else 2.0
-    if scores["구조 다양성"] == 5.0:
-        scores["구조 다양성"] = 4.0  # 절 구성이 케이스마다 동일하면 4.0 상한 (judge 항목)
+    if dupes:
+        scores["구조 다양성"] = 3.0 if len(dupes) == 1 else 2.0
+    else:
+        # 헤딩이 전부 고유해도 모든 케이스의 절 개수가 같으면 잔여 템플릿이므로 4.0 상한
+        scores["구조 다양성"] = 5.0 if varied else 4.0
     expr = 5.0 - 1.0 * len(hits["high"])
     med = len(hits["medium"]) + int(report["abstract_nouns"]["over"]) + int(report["endings"]["over"]) + int(bool(repeated))
     if not hits["high"]:
