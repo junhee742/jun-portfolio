@@ -147,7 +147,7 @@ export const careerTracks = [
   {
     id: "operations",
     label: "운영 · 안정화",
-    period: "2024.06 — 2026.05",
+    period: "2024.06 — 2026.07",
     summary:
       "장애를 한 범주로 묶지 않고, 로그와 시간대를 대조해 원인 범위를 좁혔습니다.",
     stack: ["AWS", "Docker", "Kubernetes", "Linux", "Zabbix", "PostgreSQL"],
@@ -159,10 +159,10 @@ export const careerTracks = [
         slug: null,
       },
       {
-        title: "AI 서비스 장애의 외부 의존성 분리",
-        line: "애플리케이션 로그와 외부 LLM 제공사의 장애 기록을 같은 시간대로 맞춰 원인을 갈랐습니다.",
+        title: "AI 서비스 장애 원인 분리",
+        line: "지연·오류의 원인을 우리 코드와 의존성, 외부 제공사로 갈라 대응 방향을 정했습니다.",
         metric: "50초 이상 74건을 외부 호출로 확정",
-        slug: null,
+        slug: "ai-service-incident-boundaries",
       },
     ],
   },
