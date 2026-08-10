@@ -158,9 +158,17 @@ def main() -> int:
     data = read("src/data/portfolio.ts")
     metrics = re.findall(r'metric:\s*"([^"]+)"', data)
     with_num = [m for m in metrics if re.search(r"\d", m)]
+    # 숫자 유무가 아니라 검증 가능한지를 본다. 의미 있는 수치가 없는 일은
+    # 억지로 수치화하기보다 확인 가능한 사실을 쓰는 편이 낫다.
+    # 실제 문제는 검증할 수 없는 평가어다.
+    vague_re = re.compile(r"(개선|향상|강화|최적화|안정화|효율화|고도화|극대화|제고)")
+    vague = [m for m in metrics if not re.search(r"\d", m) and vague_re.search(m)]
+    ratio = len(with_num) / len(metrics) if metrics else 1.0
     report["specificity"] = {
         "items": len(metrics),
         "with_number": len(with_num),
+        "ratio": round(ratio, 2),
+        "vague": vague,
         "without_number": [m for m in metrics if not re.search(r"\d", m)],
     }
 
@@ -195,7 +203,10 @@ def main() -> int:
 
     # --- 점수 ---
     scores = {}
-    scores["구체성"] = 5.0 if len(with_num) == len(metrics) else 4.5 if len(with_num) >= len(metrics) - 1 else 3.0
+    if vague:
+        scores["구체성"] = 3.0
+    else:
+        scores["구체성"] = 5.0 if ratio >= 0.6 else 4.5 if ratio >= 0.4 else 4.0
     if violations:
         scores["근거 정합성"] = 1.0 if len(violations) > 1 else 2.0
     elif not ledger:
@@ -255,7 +266,9 @@ def main() -> int:
         if missing:
             print(f"[대장 누락] 카피에 있으나 docs/provenance.md 에 없는 수치: {missing}")
         if report["specificity"]["without_number"]:
-            print(f"[수치 없는 항목] {report['specificity']['without_number']}")
+            if report["specificity"]["vague"]:
+                print(f"[검증 불가 표현] {report['specificity']['vague']}")
+            print(f"[수치 없는 항목 · 참고] {report['specificity']['without_number']}")
         print()
 
     return 1 if (hits["high"] or violations) else 0

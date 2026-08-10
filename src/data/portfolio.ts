@@ -6,15 +6,15 @@ export const provenResults = [
     slug: "prompt-regression",
   },
   {
-    value: "80.7%",
-    label: "한 서비스 코드 실행 범위",
-    note: "테스트 755개",
+    value: "50%대 → 80.7%",
+    label: "한 서비스 단위테스트 커버리지",
+    note: "테스트 755개 · CI 통과",
     slug: "ai-test-automation-worker",
   },
   {
-    value: "21/21",
-    label: "예약 작업 정확히 한 번씩",
-    note: "중복 0건",
+    value: "중복 0건",
+    label: "이중화 후 예약 작업 21건 모두 한 번씩",
+    note: "16시간 연속 · 장애 전환 포함",
     slug: "enterprise-chatbot-modernization",
   },
   {
@@ -50,7 +50,7 @@ export const careerTracks = [
       {
         title: "AI 답변 회귀검증",
         line: "실패한 질문만 고치지 않고, 표현을 바꾼 질문과 기존 정상 답변까지 함께 재실행했습니다.",
-        metric: "고정 원문 44/54 → 54/54",
+        metric: "고정 원문 44/54 → 54/54 · 기존 정상 8/8 유지",
         slug: "prompt-regression",
       },
       {
@@ -62,19 +62,19 @@ export const careerTracks = [
       {
         title: "이미지·음성 입력을 Agent에 연결",
         line: "LangGraph에 이미지 설명 노드를 붙이고, 음성 인식 후보를 비용·하드웨어까지 놓고 비교했습니다.",
-        metric: "STT 후보 6개 비교 후 선택",
+        metric: "이미지 입력은 제품 반영 · 음성은 데모",
         slug: "multimodal-agent-input",
       },
       {
         title: "사내 AI 어시스턴트 단독 개발",
         line: "제안부터 설계·개발·배포·운영까지 혼자 맡았고, 사내 대화를 색인해 검색으로 답하도록 넓혔습니다.",
-        metric: "커밋 41개 · 전사 채널 운영",
+        metric: "연동에서 사내 대화 색인·검색까지",
         slug: "spectra-gpt-slack-assistant",
       },
       {
         title: "지식 색인 에이전트 분리",
         line: "성격이 다른 사내 지식을 에이전트별로 나눠 각자 자기 색인만 읽게 하고, 색인 실패는 유형별로 갈라 매일 보고하게 했습니다.",
-        metric: "색인 그룹 121/124 · 실패 유형 분리",
+        metric: "색인 실패를 외부 장애·입력 한도로 구분",
         slug: "knowledge-agent-routing",
       },
     ],
@@ -127,7 +127,7 @@ export const careerTracks = [
       {
         title: "AI 테스트 자동화",
         line: "'코드를 만들었다'와 '반영해도 된다'를 같은 성공으로 보지 않고, 생성과 발행 사이에 검증 단계를 넣었습니다.",
-        metric: "코드 실행 범위 80.7% · 테스트 755개",
+        metric: "커버리지 50%대 → 80.7%",
         slug: "ai-test-automation-worker",
       },
       {
@@ -139,7 +139,7 @@ export const careerTracks = [
       {
         title: "제품 유지보수와 자산화",
         line: "기능 추가와 운영 대응을 같이 맡으면서, 커버리지 분모와 정적분석·실패 보고처럼 조용히 망가지는 쪽을 손봤습니다.",
-        metric: "작성 커밋 193개 · 8개월",
+        metric: "커버리지 분모·정적분석·실패 보고 정비",
         slug: "product-maintenance-assets",
       },
     ],

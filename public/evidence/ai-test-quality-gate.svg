@@ -56,15 +56,15 @@
 
   <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
     <rect x="64" y="396" width="336" height="104" fill="#ffffff" stroke="#d8d9df"/>
-    <text x="88" y="430" fill="#5d6068" font-size="15">보존된 한 차례 실행</text>
-    <text x="88" y="469" fill="#181a20" font-size="25" font-weight="700">518개 후보 → 대상 1개</text>
+    <text x="88" y="430" fill="#5d6068" font-size="15">무차별 생성하지 않는다</text>
+    <text x="88" y="469" fill="#181a20" font-size="25" font-weight="700">변경 518개 중 1개만 선별</text>
 
     <rect x="432" y="396" width="336" height="104" fill="#ffffff" stroke="#d8d9df"/>
-    <text x="456" y="430" fill="#5d6068" font-size="15">선택된 대상</text>
-    <text x="456" y="469" fill="#181a20" font-size="25" font-weight="700">AI 보완 1/1 · 검증 1/1</text>
+    <text x="456" y="430" fill="#5d6068" font-size="15">검증 못 넘으면 발행 안 됨</text>
+    <text x="456" y="469" fill="#181a20" font-size="25" font-weight="700">통과분만 브랜치로</text>
 
     <rect x="800" y="396" width="336" height="104" fill="#ffffff" stroke="#d8d9df"/>
-    <text x="824" y="430" fill="#5d6068" font-size="15">한 서비스의 전체 결과</text>
-    <text x="824" y="469" fill="#181a20" font-size="25" font-weight="700">코드 실행 80.7% · 테스트 755개</text>
+    <text x="824" y="430" fill="#5d6068" font-size="15">한 서비스 커버리지</text>
+    <text x="824" y="469" fill="#181a20" font-size="25" font-weight="700">50%대 → 80.7%</text>
   </g>
 </svg>
