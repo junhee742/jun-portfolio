@@ -112,7 +112,7 @@ export const careerTracks = [
   {
     id: "quality",
     label: "테스트 · 개발 생산성",
-    period: "2025.03 — 2026.06",
+    period: "2025.03 — 2026.07",
     summary:
       "빨리 만드는 자동화보다, 검증을 통과한 결과만 나가는 자동화를 우선했습니다.",
     stack: [
@@ -135,6 +135,12 @@ export const careerTracks = [
         line: "DB 객체를 유형별로 분류해 규칙에 맞는 SQL을 뽑는 Java 생성기를 만들었습니다.",
         metric: "객체 450개 · 8시간 → 1시간 미만",
         slug: "db-grant-script-automation",
+      },
+      {
+        title: "제품 유지보수와 자산화",
+        line: "기능 추가와 운영 대응을 같이 맡으면서, 커버리지 분모와 정적분석·실패 보고처럼 조용히 망가지는 쪽을 손봤습니다.",
+        metric: "작성 커밋 193개 · 8개월",
+        slug: "product-maintenance-assets",
       },
     ],
   },
@@ -177,7 +183,7 @@ export const skillGroups = [
   {
     label: "AI · LLM",
     values:
-      "LangGraph · LangChain · OpenAI API · RAG · Tool Calling · STT · Multimodal Input",
+      "LangGraph · LangChain · OpenAI API · RAG · Tool Calling · Langfuse · STT · Multimodal Input",
   },
   {
     label: "Search · Data",
