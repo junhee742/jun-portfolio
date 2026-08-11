@@ -7,7 +7,9 @@ This repository is the public, shareable portfolio for Junhee Lee. Keep the site
 - Only publish material that has passed the Jun Wiki public-safety review.
 - Never add customer names, internal product names, repository identifiers, URLs, schemas, infrastructure details, or private provenance IDs.
 - Do not inflate local or internal verification into production outcomes.
-- Preserve the explicit boundary statements in each case study.
+- Keep the scope qualifiers that change how a number reads — which service, which environment, demo vs shipped. Removing one makes the claim false, so they are not optional. Put them next to the number where possible; a closing section is fine when several are needed.
+- Do not write what you are *not* claiming. That list is infinite, reads as self-defence, and repeating it in every case study produces exactly the templated uniformity this site avoids. Restraint belongs in word choice, not in a notice about restraint.
+- Do not tell the reader that identifiers were redacted. They did not ask, and it addresses an auditor rather than the person reading.
 - Project copy lives in `src/content/work/`; the homepage is generated from that collection.
 
 ## Design rules
