@@ -193,3 +193,31 @@ grep -rn "^두 \|^이 두\|^위 \|^그 결과\|^이것들" src/content/work/*.md
 
 추상 명사로 먼저 묶고 나서 예를 드는 구조가 보이면, 묶은 문장을 지우고 예만
 남길 수 있는지 본다. 대개 남길 수 있다.
+
+## 면책은 절 끝에서 다시 자란다
+
+전용 절을 없애도 각 절의 **마지막 문장**에서 되살아난다. 강한 사실로 끝나는 절일수록
+반사적으로 한 줄을 덧붙이게 된다. "고객사가 직접 받았다" 뒤에 "운영환경에서 오래
+지켜본 결과는 없습니다"를 붙인 적이 있는데, 앞 문장의 `사내 모델오피스`와 `확인되지
+않았습니다`가 이미 범위를 말하고 있었다.
+
+주기적으로 절 끝 문장만 훑는다.
+
+```bash
+python3 - <<'PY'
+import pathlib, re
+pat = re.compile(r"(없습니다|않았습니다|아닙니다|않습니다)\.?$")
+for f in sorted(pathlib.Path("src/content/work").glob("*.mdx")):
+    body = re.sub(r'^---.*?^---','',f.read_text(encoding='utf-8'),flags=re.S|re.M)
+    for sec in re.split(r'(?=^## )', body, flags=re.M):
+        if not sec.startswith("##"): continue
+        paras = [p.strip() for p in sec.split("\n\n") if p.strip() and not p.startswith(("##","<"))]
+        if not paras: continue
+        s = [x.strip() for x in re.split(r'(?<=다\.)\s*', paras[-1]) if x.strip()]
+        if s and pat.search(s[-1]): print(f.stem, "→", s[-1][:80])
+PY
+```
+
+걸린 문장을 전부 지우는 것이 아니다. **판단·기능·범위 한정은 남기고, 앞 문장이 이미
+말한 것을 되풀이하는 면책만 지운다.** 마지막 점검에서는 7건이 걸렸고 그중 2건만
+면책이었다.
