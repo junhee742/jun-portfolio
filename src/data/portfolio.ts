@@ -55,8 +55,8 @@ export const careerTracks = [
       },
       {
         title: "검색 범위를 제어하는 RAG",
-        line: "LLM은 검색 후보만 제안하고, 실제 필터와 대체 경로는 코드가 정하게 했습니다.",
-        metric: "변경 경로 4곳 정적 검사·테스트",
+        line: "LLM은 검색 후보만 제안하게 하고, 성격이 다른 지식은 에이전트별로 색인을 갈랐습니다.",
+        metric: "에이전트마다 자기 색인만 · 색인 실패 유형 분리",
         slug: "rag-search-ingestion",
       },
       {
@@ -70,12 +70,6 @@ export const careerTracks = [
         line: "제안부터 설계·개발·배포·운영까지 혼자 맡았고, 사내 대화를 색인해 검색으로 답하도록 넓혔습니다.",
         metric: "연동에서 사내 대화 색인·검색까지",
         slug: "spectra-gpt-slack-assistant",
-      },
-      {
-        title: "지식 색인 에이전트 분리",
-        line: "성격이 다른 사내 지식을 에이전트별로 나눠 각자 자기 색인만 읽게 하고, 색인 실패는 유형별로 갈라 매일 보고하게 했습니다.",
-        metric: "색인 실패를 외부 장애·입력 한도로 구분",
-        slug: "knowledge-agent-routing",
       },
     ],
   },
