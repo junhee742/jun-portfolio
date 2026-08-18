@@ -4,7 +4,7 @@ import { withBase } from '../lib/paths';
 interface Props {
   src: string;
   alt: string;
-  caption: string;
+  caption?: string;
 }
 
 const { src, alt, caption } = Astro.props;
@@ -12,5 +12,5 @@ const { src, alt, caption } = Astro.props;
 
 <figure class="evidence-figure">
   <img src={withBase(src)} alt={alt} loading="lazy" decoding="async" />
-  <figcaption>{caption}</figcaption>
+  {caption && <figcaption>{caption}</figcaption>}
 </figure>
