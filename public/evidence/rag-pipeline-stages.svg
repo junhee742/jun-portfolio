@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">색인 배치와 질의 처리가 저장소에서 만나는 구조</title>
+  <desc id="desc">매일 도는 색인 배치가 문서를 수집해 자르고 메타데이터를 붙여 저장합니다. 요청마다 도는 질의 경로는 질문을 재작성해 검색하고 답을 만듭니다. 검색은 색인이 저장해 둔 것만 읽으므로, 자른 단위가 검색 결과를 좌우합니다. 표시된 네 곳이 고친 자리입니다.</desc>
+  <rect width="1200" height="500" fill="#fbfaf6"/>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <text x="64" y="72" fill="#181a20" font-size="34" font-weight="700">검색은 색인이 저장해 둔 것만 읽습니다</text>
+    <text x="64" y="110" fill="#5d6068" font-size="19">그래서 자른 단위가 검색 결과를 좌우합니다. 파란 표시가 고친 네 자리입니다.</text>
+
+    <!-- 색인 레인 -->
+    <text x="64" y="168" fill="#5d6068" font-size="16" font-weight="700">색인 · 매일 배치</text>
+    <rect x="64" y="182" width="1072" height="96" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+
+    <g transform="translate(96 182)">
+      <rect y="26" width="196" height="44" rx="4" fill="#f2f1ec"/>
+      <text x="98" y="54" fill="#181a20" font-size="19" text-anchor="middle">문서 수집</text>
+      <path d="M212 48h44" stroke="#5d6068" stroke-width="2"/>
+      <path d="m249 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(368 182)">
+      <rect y="26" width="196" height="44" rx="4" fill="#ffffff" stroke="#2955d9" stroke-width="2"/>
+      <text x="98" y="54" fill="#2955d9" font-size="19" font-weight="700" text-anchor="middle">자르기</text>
+      <path d="M212 48h44" stroke="#5d6068" stroke-width="2"/>
+      <path d="m249 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(640 182)">
+      <rect y="26" width="196" height="44" rx="4" fill="#ffffff" stroke="#2955d9" stroke-width="2"/>
+      <text x="98" y="54" fill="#2955d9" font-size="19" font-weight="700" text-anchor="middle">메타데이터</text>
+      <path d="M212 48h44" stroke="#5d6068" stroke-width="2"/>
+      <path d="m249 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(912 182)">
+      <rect y="26" width="196" height="44" rx="4" fill="#f2f1ec"/>
+      <text x="98" y="54" fill="#181a20" font-size="19" text-anchor="middle">저장</text>
+    </g>
+
+    <!-- 저장 → 검색 연결 -->
+    <path d="M1010 278v56" stroke="#2955d9" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="m1003 327 7 8 7-8" fill="none" stroke="#2955d9" stroke-width="2"/>
+    <text x="1026" y="312" fill="#2955d9" font-size="15">저장된 것만 읽힘</text>
+
+    <!-- 질의 레인 -->
+    <text x="64" y="376" fill="#5d6068" font-size="16" font-weight="700">질의 · 요청마다</text>
+    <rect x="64" y="390" width="1072" height="96" rx="4" fill="#ffffff" stroke="#d8d9df"/>
+
+    <g transform="translate(96 390)">
+      <rect y="26" width="152" height="44" rx="4" fill="#f2f1ec"/>
+      <text x="76" y="54" fill="#181a20" font-size="19" text-anchor="middle">질문</text>
+      <path d="M168 48h40" stroke="#5d6068" stroke-width="2"/>
+      <path d="m201 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(320 390)">
+      <rect y="26" width="152" height="44" rx="4" fill="#ffffff" stroke="#2955d9" stroke-width="2"/>
+      <text x="76" y="54" fill="#2955d9" font-size="19" font-weight="700" text-anchor="middle">재작성</text>
+      <path d="M168 48h40" stroke="#5d6068" stroke-width="2"/>
+      <path d="m201 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(544 390)">
+      <rect y="26" width="152" height="44" rx="4" fill="#ffffff" stroke="#2955d9" stroke-width="2"/>
+      <text x="76" y="54" fill="#2955d9" font-size="19" font-weight="700" text-anchor="middle">검색</text>
+      <path d="M168 48h40" stroke="#5d6068" stroke-width="2"/>
+      <path d="m201 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(768 390)">
+      <rect y="26" width="152" height="44" rx="4" fill="#f2f1ec"/>
+      <text x="76" y="54" fill="#181a20" font-size="19" text-anchor="middle">생성</text>
+      <path d="M168 48h40" stroke="#5d6068" stroke-width="2"/>
+      <path d="m201 41 8 7-8 7" fill="none" stroke="#5d6068" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(992 390)">
+      <rect y="26" width="112" height="44" rx="4" fill="#f2f1ec"/>
+      <text x="56" y="54" fill="#181a20" font-size="19" text-anchor="middle">답변</text>
+    </g>
+  </g>
+</svg>
