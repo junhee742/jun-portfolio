@@ -1,30 +1,3 @@
-export const provenResults = [
-  {
-    value: "54/54",
-    label: "AI 답변 회귀검증 통과",
-    note: "변경 전 44/54",
-    slug: "prompt-regression",
-  },
-  {
-    value: "50%대 → 80.7%",
-    label: "한 서비스 단위테스트 커버리지",
-    note: "테스트 755개 · CI 통과",
-    slug: "ai-test-automation-worker",
-  },
-  {
-    value: "중복 0건",
-    label: "이중화 후 예약 작업 21건 모두 한 번씩",
-    note: "16시간 연속 · 장애 전환 포함",
-    slug: "enterprise-chatbot-modernization",
-  },
-  {
-    value: "8시간 → 1시간",
-    label: "반복 SQL 작성 시간",
-    note: "DB 객체 450개",
-    slug: "db-grant-script-automation",
-  },
-];
-
 export const careerSummary = {
   company: "(주)스펙트라 제품개발부",
   period: "2022.11 — 현재",
